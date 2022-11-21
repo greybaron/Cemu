@@ -530,8 +530,8 @@ bool MainWindow::FileLoad(std::wstring fileName, wxLaunchGameEvent::INITIATED_BY
 	auto* sizer = new wxBoxSizer(wxVERTICAL);
 
 	// shouldn't be needed, but who knows
-	m_game_panel->Bind(wxEVT_KEY_UP, &MainWindow::OnKeyUp, this);
-	m_game_panel->Bind(wxEVT_CHAR, &MainWindow::OnChar, this);
+	// m_game_panel->Bind(wxEVT_KEY_UP, &MainWindow::OnKeyUp, this);
+	// m_game_panel->Bind(wxEVT_CHAR, &MainWindow::OnChar, this);
 
 	m_game_panel->SetSizer(sizer);
 	main_sizer->Add(m_game_panel, 1, wxEXPAND, 0, nullptr);
@@ -1387,8 +1387,8 @@ void MainWindow::OnChar(wxKeyEvent& event)
 {
 	if (swkbd_hasKeyboardInputHook())
 		swkbd_keyInput(event.GetUnicodeKey());
-	
-	event.Skip();
+
+	// event.Skip();
 }
 
 void MainWindow::OnToolsInput(wxCommandEvent& event)
